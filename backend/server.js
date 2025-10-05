@@ -17,15 +17,14 @@ const db = mysql.createConnection({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306
 });
 
-db.connect(err => {
+db.connect((err) => {
   if (err) console.error("❌ Database connection failed:", err);
   else console.log("✅ Connected to Clever Cloud MySQL successfully!");
 });
 
-// API route test
+// Example API route
 app.get("/api", (req, res) => {
   res.json({ message: "Backend is working!" });
 });
@@ -37,7 +36,7 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, "../build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
