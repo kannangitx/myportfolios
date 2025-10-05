@@ -29,12 +29,13 @@
     "web-vitals": "^2.1.4",
     "axios": "^1.12.2"
   },
-  "scripts": {
-    "start": "node backend/server.js",
-    "build": "react-scripts build",
-    "client-install": "cd src && npm install",
-    "postinstall": "npm run client-install && npm run build"
-  },
+ "scripts": {
+  "start": "node backend/server.js",
+  "client-install": "cd src && npm install",
+  "build": "cd src && npm run build",
+  "postinstall": "npm run client-install && npm run build"
+}
+,
   "eslintConfig": {
     "extends": [
       "react-app",
