@@ -1,4 +1,4 @@
-require('dotenv').config(); // load .env variables
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -10,21 +10,18 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MySQL connection using Railway URL
-const db = mysql.createConnection(process.env.MYSQL_URL || 'mysql://root:VQzNBravIdVXItxSWRTgZLjhABsAZaGV@mysql.railway.internal:3306/railway');
+const db = mysql.createConnection(process.env.MYSQL_URL);
 
 db.connect(err => {
     if(err){
         console.error('❌ Database connection failed:', err);
     } else {
-        console.log('✅ Connected to Railway MySQL successfully!');
+        console.log('✅ Connected to Clever Cloud MySQL successfully!');
     }
 });
 
-// API endpoint to save contact form
 app.post('/contact', (req, res) => {
     const { name, email, contactNo, message } = req.body;
-
     const sql = `INSERT INTO contacts (name, email, contact_no, message) VALUES (?, ?, ?, ?)`;
     db.query(sql, [name, email, contactNo, message], (err, result) => {
         if(err){
