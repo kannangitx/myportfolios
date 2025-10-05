@@ -1,0 +1,161 @@
+@font-face {
+  font-family: MYFONTS;
+  src: url('../FONT/Ndot 57 Aligned.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 18px;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+/* Inner wrapper */
+.navbar1 {
+  backdrop-filter: blur(5px);
+  background: rgba(94, 89, 89, 0.363);
+  margin: 15px;
+  border-radius: 20px;
+  width: 950px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: MYFONTS, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  font-weight: 600;
+  font-family:MYFONTS;
+  color: #fff;
+  user-select: none;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Navigation links - desktop default */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.nav-links li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Button */
+.kamal {
+  cursor: pointer;
+  font-family: MYFONTS;
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #000;
+  height: 35px;
+  width: 140px;
+  transition: all 0.2s ease-in-out;
+  clip-path: polygon(100% 0, 100% 75%, 90% 100%, 0 100%, 0 0);
+}
+
+.kamal:hover {
+  background: #000;
+  color: #fff;
+  clip-path: none;
+}
+
+/* Hamburger button */
+.m_cl {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22px;
+  width: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.m_cl div {
+  height: 3px;
+  width: 100%;
+  background: #f3f3f3;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Open hamburger animation */
+.m_cl.open .l1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+.m_cl.open .l2 {
+  opacity: 0;
+}
+.m_cl.open .l3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Responsive styles for mobile */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    position: fixed;
+    top: 66px;
+    right: 1px;
+    flex-direction: column;
+    background: rgba(97, 97, 97, 0.651);
+    width: 220px;
+    height: 250px;
+    border-radius: 12px;
+    transform: translateX(200%);
+    transition: transform 0s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links.active {
+    transform: translateX(0%);
+  }
+
+  /* Hide desktop button on mobile */
+  .kamal {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .m_cl {
+    display: flex;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 432px) {
+  .nav-links {
+    right: 10px;
+    width: 180px;
+  }
+}

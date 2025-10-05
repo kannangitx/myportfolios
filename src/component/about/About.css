@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+/* Section Background */
+.about {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, #0a0a0a, #111);
+  color: #fff;
+}
+
+/* Container Layout */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Image */
+.about-image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease;
+  animation: floatUpDown 4s ease-in-out infinite; /* 👈 floating animation */
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Content */
+.about-content {
+  flex: 1;
+}
+
+.about-title {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #8efb5a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(142, 251, 90, 0.6);
+}
+
+.about-line {
+  width: 80px;
+  height: 3px;
+  border: none;
+  margin: 10px 0 25px 0;
+  background: linear-gradient(90deg, #8efb5a, transparent);
+}
+
+.about-description {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  text-align: justify;
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  .about-line {
+    margin: 10px auto 25px auto;
+  }
+}

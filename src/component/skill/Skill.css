@@ -1,0 +1,244 @@
+/* ===========================
+   🌐 SKILL SECTION
+=========================== */
+.skills-section {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 80px;
+  background: linear-gradient(90deg, #00ffa3, #00c3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+   🎞️ MARQUEE STYLES
+=========================== */
+.marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 50px;
+  z-index: 2;
+}
+
+.marquee.reverse .marquee-inner {
+  animation-direction: reverse;
+}
+
+.marquee-inner {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  gap: 40px;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  min-width: 130px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: visible; /* Ensures scaling does not clip */
+  transform-origin: center;
+}
+
+.skill-card:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.4);
+  z-index: 10;
+}
+
+.skill-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-logo {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===========================
+   ⚙️ RESPONSIVE STYLES
+=========================== */
+@media (max-width: 1024px) {
+  .skills-title {
+    font-size: 2.5rem;
+  }
+
+  .skill-card {
+    width: 110px;
+    min-width: 110px;
+    padding: 20px;
+  }
+
+  .skill-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skill-card {
+    width: 100px;
+    min-width: 100px;
+    padding: 18px;
+  }
+
+  .skill-logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* ===========================
+   💬 FAQ SECTION
+=========================== */
+.faq-section {
+  margin-top: 120px;
+  padding: 100px 20px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.faq-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.faq-title span {
+  color: #00ffa3;
+  font-family: "Orbitron", sans-serif;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: linear-gradient(145deg, #111, #0a0a0a);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  background: linear-gradient(145deg, #151515, #0c0c0c);
+  border-color: rgba(0, 255, 170, 0.3);
+}
+
+.faq-item.active {
+  box-shadow: 0 0 25px rgba(0, 255, 150, 0.3);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.faq-question span {
+  font-size: 1.8rem;
+  color: #00ffa3;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question span {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #bdbdbd;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   📱 RESPONSIVE FAQ
+=========================== */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem;
+  }
+
+  .faq-item {
+    padding: 15px 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+}
