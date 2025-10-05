@@ -31,9 +31,8 @@
   },
  "scripts": {
   "start": "node backend/server.js",
-  "client-install": "cd src && npm install",
-  "build": "cd src && npm run build",
-  "postinstall": "npm run client-install && npm run build"
+  "build": "react-scripts build",
+  "postinstall": "npm run build"
 }
 ,
   "eslintConfig": {
