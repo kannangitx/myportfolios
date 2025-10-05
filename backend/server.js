@@ -37,10 +37,11 @@ app.get("/api", (req, res) => {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "../build")));
+// Make sure the path points to your React build folder
+app.use(express.static(path.join(__dirname, "../src/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
+  res.sendFile(path.join(__dirname, "../src/build", "index.html"));
 });
 
 // Use Render’s PORT or fallback
