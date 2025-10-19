@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fbcc8ff1.css",
+    "main.js": "/static/js/main.5a47b0cf.js",
+    "static/media/herovideo.mp4": "/static/media/herovideo.416cf28347371a28cc38.mp4",
+    "static/media/Orbit-Regular.ttf": "/static/media/Orbit-Regular.2d38de5b78645e6d0ac8.ttf",
+    "static/media/cont.png": "/static/media/cont.bc735a7288a228889c77.png",
+    "static/media/Miracode.ttf": "/static/media/Miracode.81db29bc65b738dda4d2.ttf",
+    "static/media/new.png": "/static/media/new.64743b08fd0f066c16ee.png",
+    "static/media/TwilioSansMono-Medium.ttf": "/static/media/TwilioSansMono-Medium.be1987e9ab0e8fdd1ee0.ttf",
+    "static/media/Ndot 57 Aligned.ttf": "/static/media/Ndot 57 Aligned.bb4aa50c85e7b3482470.ttf",
+    "static/media/Lotion-Regular.ttf": "/static/media/Lotion-Regular.8efa21fcdb5ba2fedc74.ttf",
+    "index.html": "/index.html",
+    "main.fbcc8ff1.css.map": "/static/css/main.fbcc8ff1.css.map",
+    "main.5a47b0cf.js.map": "/static/js/main.5a47b0cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbcc8ff1.css",
+    "static/js/main.5a47b0cf.js"
+  ]
+}
