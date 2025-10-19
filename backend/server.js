@@ -11,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// MySQL connection
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -24,16 +25,18 @@ db.connect(err => {
   else console.log("✅ Connected to MySQL successfully!");
 });
 
+// Fix __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve React build
+// Serve React build folder
 app.use(express.static(path.join(__dirname, "../build")));
 
-// FIXED WILDCARD
-app.get("/*", (req, res) => {
+// For any unknown route, send React index.html
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
